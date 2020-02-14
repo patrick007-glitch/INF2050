@@ -8,7 +8,7 @@
 - Auteur     : `<Patrick Chalifour>` (`<CHAP03089503>`) (`<dj991063@ens.uqam.ca>`)
 - Auteur     : `<Serban-Costin Ivanescu>` (`<IVAS14069704>`) (`<votre courriel UQAM>`)
 - Auteur     : `<Anaïs Yaïci>` (`<YAIA20559707>`) (`<votre courriel UQAM>`)
-- Auteur     : `<Steve Gordon>` (`<GORS09077601>`) (`<votre courriel UQAM>`)
+- Auteur     : `<Steve Gordon>` (`<GORS09077601>`) (`<gordon.steve@courrier.uqam.ca>`)
 
 
 # Comparaison des outils de build java
