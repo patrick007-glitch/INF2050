@@ -50,7 +50,13 @@ De plus, *Gradle* est beaucoup plus compréhensible qu'*Ant* sur la documentatio
 Enfin, *Gradle* comprend une variété énorme de tutoriels, pour des projets dans plusieurs languages de programmation, alors qu'*Ant* comprend seulement quelques tutoriels et encore une fois le niveau de connaissance requise pour lire les tutoriels est beaucoup plus élevé avec *Ant* qu'avec *Gradle*. 
 
 
-#### Critères 2 : 
+#### Critère 2 : La maintenance
+ 
+
+
+
+
+
 
 
 #### Critères 3 : 
