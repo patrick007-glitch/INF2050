@@ -66,7 +66,20 @@ En définitive, le meilleur outil, strictement sur le plan de la maintenance, es
 
 
 
-#### Critère 3 :
+#### Critère 3: Soutien Actuel
+
+D'ailleurs de la complexité du code et son utilisation, il y a le support actuel qu'un program possède qui vient jouer un rôle au choix. On ne choisit plus d'installer Windows XP dû à son obsolescence et son arrêt de support.
+
+Plus spécifiquement le support d'une application viendra toucher: La période dont elle a ete concue, en quelle language elle a été écrite et pour quelle system d'opération, la portability , la frequence des mise a jours et le nombre d'utilisateurs approximatif présent.
+
+Commencent par la date initiale de lancement, pour Apache Ant, c'est le 19 août 2000. Quant à Gradle, la première version a été lancé le 12 juin 2012. Déjà là nous voyons une différence de 12 ans entre les deux applications, ce qui, dans le monde des applications marque plusieurs générations d'applications. Nous savons qu'Apache Maven est l'iteration par apache d'ant par contre Gradle vient appris les deux. De plus Gradle étant un conçue pour remplacer Ant et Maven, donc possède des commandes pour transformer les fichiers XML d'Ant et Maven en configuration de Gradle. Ceci est les principaux avantages de l'iteration.
+
+Quant au language et system, les deux applications sont écriés en Java donc roulent sur le JVM et sont donc très compatibles avec la majorité des systèmes d'opération moderne. Bien sur, cela veut aussi dire que les applications sont dépendantes de Java. Par contre, au moment présent Java est l'un des languages les plus utilisé et est donc très soutenu. 
+
+Pour ce qui est de la fréquence des mise a jours. La deniere version majeur de Gradle a été lancer le 8 novembre 2019 (6.0) et depuis a eu 2 version mineur (6.1 et 6.2) la 6.2 étant lancer le 17 fevrier 2020. Contrairement Apache Ant et sur la meme version majeur (1.10) depuis 2016. Cependant elle possede des mise a jours mineur a fréquence réguliere (3~5 mois). La derniere version mineur stable de Apache Ant (1.10.7) etais le 5 septembre 2019.
+
+Quant aux nombre d'utilisateurs, Il serait très difficile de faire une comparaison précise, par contre nous pouvons analyser les tendances de recherche sur l'internet. Il faut, par contre, prendre les résultats avec beaucoup d'incertitude. En faisant une comparaison à travers le temps et mondialement sur googlent trends avec les mots-clefs "Apache ant" et "Gradle", nous voyons qu'Ant était plus rechercher au lancement de Gradle, par contre Gradle monte et rattrape Apache Ant autour de mi-2014 tandis que celle-ci est en déclin tranquille. D'après Google trends, en janvier 2020, la recherche des mots serait de 83 a 11 pour Gradle. De plus, une analyse entre le trafic des sites officiels de chaque application, notamment "gradle.org" et "ant.apache.org". Cependant vue que "ant.apache.org" est un sous-domaine de "apache.org", il est difficile de déterminer le trafic de "ant.apache.org". De ce, "apache org" possède grandement plus de traffic  que "gradle.org".
+
 
 
 
