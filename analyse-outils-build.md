@@ -1,4 +1,4 @@
-## Identification 
+## Identification
 
 - Cours      : Outils et pratiques de développement logiciel
 - Sigle      : INF2050
@@ -17,18 +17,18 @@
 *Ant* est un outil de build sorti en 2000 pour pallier aux difficultés de *MAKE* qui est sorti en 1976 et codé en C.  L'une des raisons majeures d'être d'*Ant* est la difficulté
 d'intégrer des conventions du language C dans l'écosystème Java. Les fichiers de build *Ant* sont écrits en *XML* et sont nommés _build.xml_ par convention. *Ant* requiert que les développeurs
 écrivent toutes les commandes de gestion de build pour leur projet ce qui peut mener à des fichiers *XML* énormes comportant des centaines et parfois des milliers de lignes. De plus, le projet *Ant*
-original est sorti avec aucun système de gestion des dépendances. Lorsque le besoin s'est fait sentir, le sous-projet *IVY* qui est un gestionnaire de dépendances, a été développé par *Jayasoft* et intégré avec *Ant*.
+original est sorti avec aucun système de gestion des dépendances. Lorsque le besoin s'est fait sentir, le sous-projet *IVY* qui est un gestionnaire de dépendances, a été développé par *Jayasoft* et intégré avec *Ant*.[1]
 
-Source : https://www.baeldung.com/ant-maven-gradle, mise à jour le 15 août 2019, auteur : baeldung.
+
 
 ## Gradle
 Gradle a été conçu avec Maven et Ant en tête. Il n'utilise plus des fichiers *XML* mais plutôt un DSL basé sur Groovy et qui adapte un langage spécifique pour des projets spécifiques. Un fichier de configuration Gradle s'apelle build.gradle par convention.
 Gradle seul n'a pas vraiment de fonction. Il faut utiliser des plugins pour ajouter des fonctionnalités a Gradle ce qui permet de garder les fichiers de configuration simples et courts.
 À partir de la version 1.0, *Gradle* n'utilise plus *IVY* comme gestionnaire de dépendances. Un gestionnaire de dépendances independant a été construit spécifiquement pour *Gradle*.
-De plus, *Gradle* est nativement intégré à Eclipse, Intellij et NetBeans ce qui permet de rouler directement des builds *Gradle* dans ces *IDE*.
+De plus, *Gradle* est nativement intégré à Eclipse, Intellij et NetBeans ce qui permet de rouler directement des builds *Gradle* dans ces *IDE*.[2]
 
 
-Source : https://docs.gradle.org/1.0/release-notes.html#powerful-dependency-management
+
 
 
 
@@ -36,19 +36,19 @@ Source : https://docs.gradle.org/1.0/release-notes.html#powerful-dependency-mana
 
 #### Critère 1 :  L'utilisabilité
 
-L'utilisabilité en tant que critère se décrit facilement lorsque l'on considère les sous critères nécessaires à l'évaluation de celui-ci.
+L'utilisabilité en tant que critère se décrit facilement lorsque l'on considère les sous critères nécessaires à l'évaluation de celui-ci soit la compréhensibilité et la documentation.[3]
 
-Tout d'abord, un bon outil de build doit être *compréhensible*. Le but et la fonction de cet outil doivent être clairs pour que l'utilisateur ciblé voie facilement l'utilité et les avantages de choisir cet outil au lieu d'un autre. De plus, pour attirer l'attention de la communauté des programmeurs, un outil de build doit nécessairement donner accès aux fonctions de base nécessaires mais aussi à des fonctions avancées qui le distingueront des autres outils disponibles. L'outil doit être facile d'utilisation et ne pas exiger une constante relecture de la documentation. De plus, la simplicité et la rapidité d'utilisation d'un outil influence aussi sa compréhensabilité. Par exemple, un outil complexe à installer annonce un outil plus complexe et plus long à utiliser.
+Tout d'abord, un bon outil de build doit être *compréhensible*. Le but et la fonction de cet outil doivent être clairs pour que l'utilisateur ciblé voie facilement l'utilité et les avantages de choisir cet outil au lieu d'un autre. De plus, pour attirer l'attention de la communauté des programmeurs, un outil de build doit nécessairement donner accès aux fonctions de base nécessaires mais aussi à des fonctions avancées qui le distingueront des autres outils disponibles. L'outil doit être facile d'utilisation et ne pas exiger une constante relecture de la documentation. De plus, la simplicité et la rapidité d'utilisation d'un outil influence aussi sa compréhensabilité. Par exemple, un outil complexe à installer annonce un outil plus complexe et plus long à utiliser.[3]
 
-Intrinsèquement, un bon outil de build doit avoir une documentation disponible et complète pour faciliter la compréhension de l'outil et son utilisation. Cette documentation doit contenir toutes les caractéristiques définies par le sous critère de la compréhensibilité mais doit en plus être de bonne qualité. Une bonne documentation se mesure sur le niveau de lecture et de connaissance requise pour comprendre celle-ci ainsi que la concision et l'étendue de sa couverture. Elle doit contenir, lorsque cela est possible des instructions étape par étape pour l'utilisation, les commandes, les problèmes et les messages d'erreurs qui sont simples et concises. Cette documentation doit offrir un support complet et offrir une éducation exhaustive sur comment utiliser l'outil.
+Intrinsèquement, un bon outil de build doit avoir une documentation disponible et complète pour faciliter la compréhension de l'outil et son utilisation. Cette documentation doit contenir toutes les caractéristiques définies par le sous critère de la compréhensibilité mais doit en plus être de bonne qualité. Une bonne documentation se mesure sur le niveau de lecture et de connaissance requise pour comprendre celle-ci ainsi que la concision et l'étendue de sa couverture. Elle doit contenir, lorsque cela est possible des instructions étape par étape pour l'utilisation, les commandes, les problèmes et les messages d'erreurs qui sont simples et concises. Cette documentation doit offrir un support complet et offrir une éducation exhaustive sur comment utiliser l'outil.[3]
 
 L'utilisabilité est un critère très important car il peut affecter la décision d'un programmeur ou d'une entreprise d'utiliser un outil au lieu d'un autre sans même avoir écrit une seule ligne de code. Un outil bien documenté et compréhensible aura un avantage certain sur un autre outil et pourrait avoir une plus grande adoption par l'industrie. Plus un outil est compréhensible, plus il donne des ressources, des balises et des instructions claires aux programmeurs ce qui leurs permet de manière général, de travailler plus efficacement et plus rapidement sur une variété de projets.
 
 D'abord, lorsque l'on consulte le site web des deux outils de build, les buts de *Gradle* sont mis en avant plan et énoncés clairement. Avec *Ant* on tombe directement sur un descripteur des différentes versions et son but et ses avantages sont moins facilement repérables.
 D'un autre côté, *Gradle* offre les mêmes fonctionnalités de base que les fonctionnalités d'*Ant*. En plus, il offre des fonctionnalités avancées, documentées de manière claire et concise, et avec une variété de langages. Ceci donne un avantage clair sur *Ant* car un programmeur devra apprendre uniquement un outil de build.Tel que présenté, Ant a été créé principalement pour des projets java. Or, un programmeur devra apprendre un autre outil de construction s’il doit faire des projets en d’autres langages.
-De plus, *Gradle* est beaucoup plus compréhensible qu'*Ant* sur la documentation pour l'installation. 
+De plus, *Gradle* est beaucoup plus compréhensible qu'*Ant* sur la documentation pour l'installation.
 
-En effet, alors que la documentation pour Gradle fait le tour de l’installation en quelques lignes seulement et comporte des commandes relativement simples à comprendre, la documentation d’Ant fait, quant à elle, plusieurs pages d’environ 500 lignes et comprend des instructions relativement plus complexes et plusieurs lignes de commandes. 
+En effet, alors que la documentation pour Gradle fait le tour de l’installation en quelques lignes seulement et comporte des commandes relativement simples à comprendre, la documentation d’Ant fait, quant à elle, plusieurs pages d’environ 500 lignes et comprend des instructions relativement plus complexes et plusieurs lignes de commandes.
 Bref, le niveau de connaissance du lecteur pour installer *Ant* doit être plus élevé. La documentation pour *Gradle* est plus courte, plus concise, plus facile à lire et va droit au but.
 
 Enfin, *Gradle* comprend une variété énorme de tutoriels, pour des projets dans plusieurs langages de programmation, alors qu'*Ant* comprend seulement quelques tutoriels et encore une fois le niveau de connaissances requise pour lire les tutoriels est beaucoup plus élevé avec *Ant* par rapport à *Gradle*.
@@ -78,7 +78,7 @@ Plus spécifiquement le support d'une application viendra toucher: La période d
 
 Commencent par la date initiale de lancement, pour Apache Ant, c'est le 19 août 2000. Quant à Gradle, la première version a été lancé le 12 juin 2012. Déjà là nous voyons une différence de 12 ans entre les deux applications, ce qui, dans le monde des applications marque plusieurs générations d'applications. Nous savons qu'Apache Maven est l'itération par apache d'ant par contre Gradle vient après les deux. De plus Gradle étant un conçue pour remplacer Ant et Maven, donc possède des commandes pour transformer les fichiers XML d'Ant et Maven en configuration de Gradle. Ceci est les principaux avantages de l'itération.
 
-Quant au langage et système, les deux applications sont écrites en Java donc roulent sur le JVM et sont donc très compatibles avec la majorité des systèmes d'opérations modernes. Bien sûr, cela veut aussi dire que les applications sont dépendantes de Java. Par contre, au moment présent Java est l'un des langages les plus utilisé et est donc très soutenu. 
+Quant au langage et système, les deux applications sont écrites en Java donc roulent sur le JVM et sont donc très compatibles avec la majorité des systèmes d'opérations modernes. Bien sûr, cela veut aussi dire que les applications sont dépendantes de Java. Par contre, au moment présent Java est l'un des langages les plus utilisé et est donc très soutenu.
 
 Pour ce qui est de la fréquence des mises à jours. La dernière version majeure de Gradle a été lancer le 8 novembre 2019 (6.0) et depuis a eu deux versions mineures (6.1 et 6.2) la 6.2 étant lancer le 17 février 2020. Contrairement Apache Ant et sur la même version majeure (1.10) depuis 2016. Cependant elle possède des mises a jours mineures à fréquences régulières (3~5 mois). La dernière version mineure stable de Apache Ant (1.10.7) était le 5 septembre 2019.
 
