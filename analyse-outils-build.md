@@ -72,9 +72,9 @@ En définitive, le meilleur outil, strictement sur le plan de la maintenance, es
 
 #### Critère 3: Soutien Actuel
 
-D'ailleurs de la complexité du code et son utilisation, il y a le support actuel qu'un program possède qui vient jouer un rôle au choix. On ne choisit plus d'installer Windows XP dû à son obsolescence et son arrêt de support.
+D'ailleurs de la complexité du code et son utilisation, il y a le support actuel qu'un programme possède qui vient jouer un rôle au choix. On ne choisit plus d'installer Windows XP dû à son obsolescence et son arrêt de support.
 
-Plus spécifiquement le support d'une application viendra toucher: La période dont elle a ete concue, en quelle language elle a été écrite et pour quelle system d'opération, la portability , la frequence des mise a jours et le nombre d'utilisateurs approximatif présent.
+Plus spécifiquement le support d'une application viendra toucher: La période dont elle a été concue, en quelle langage elle a été écrite et pour quelle système d'opération, la portabilité , la fréquence des misez à jours et le nombre d'utilisateurs approximatif présent.
 
 Commencent par la date initiale de lancement, pour Apache Ant, c'est le 19 août 2000. Quant à Gradle, la première version a été lancé le 12 juin 2012. Déjà là nous voyons une différence de 12 ans entre les deux applications, ce qui, dans le monde des applications marque plusieurs générations d'applications. Nous savons qu'Apache Maven est l'iteration par apache d'ant par contre Gradle vient appris les deux. De plus Gradle étant un conçue pour remplacer Ant et Maven, donc possède des commandes pour transformer les fichiers XML d'Ant et Maven en configuration de Gradle. Ceci est les principaux avantages de l'iteration.
 
