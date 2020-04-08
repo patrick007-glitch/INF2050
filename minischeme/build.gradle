@@ -1,27 +1,9 @@
 plugins {
     id 'java'
-    id 'Junit'
 }
 
 dependencies {
-    testImplementation 'junit:junit:5.3'
+    test 'junit:junit:4.12'
 }
 
-mainClassName = "ClassePrincipale"
-
-test {
-    useJUnit()
-    maxHeapSize = '1G'
-}
-
-
-task copy(type: Copy, group: "Custom", description: "Copies sources to the dest directory") {
-    from "src"
-    into "out"
-}
-
-
-task zip(type: Zip, group: "Archive", description: "Archives sources in a zip file") {
-    from "src"
-    setArchiveName "test1.zip"
-}
+mainClassName = "minischeme.Application"
