@@ -2,8 +2,31 @@ plugins {
     id 'java'
 }
 
-dependencies {
-    test 'junit:junit:4.12'
+repositories {
+  mavenCentral()
 }
 
-mainClassName = "minischeme.Application"
+dependencies {
+  compile 'commons-lang:commons-lang:2.0'
+  compile 'com.fasterxml.jackson.core:jackson-core:2.9.1'
+  compile 'com.fasterxml.jackson.core:jackson-databind:2.9.1'
+  compile 'com.fasterxml.jackson.core:jackson-annotations:2.9.1'
+}
+
+test {
+  useJUnitPlatform()
+}
+
+
+dependencies {
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.3.1'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.3.1'
+}
+
+jar {
+  manifest{
+    attributes 'Main-Class': 'minischeme.Aplication'
+  }
+}
+
+version '1.0-test1'

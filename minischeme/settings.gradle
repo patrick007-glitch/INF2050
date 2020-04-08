@@ -8,3 +8,11 @@
  */
 
 rootProject.name = 'minischeme'
+
+
+buildCache {
+    local {
+        directory = new File(rootDir, 'build-cache')
+        removeUnusedEntriesAfterDays = 10
+    }
+}
