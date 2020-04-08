@@ -20,7 +20,10 @@ public class Evaluator {
     final var head = sexpr.get(0);
     final var tail = sexpr.subList(1, sexpr.size());
     
-    if (head.equals("if")) {
+    if (head.equals("list")) {
+      return tail.stream().map(a -> eval(a, env)).collect(toList());
+    }
+    else if (head.equals("if")) {
       var branch = ((boolean) eval(tail.get(0), env)) ? tail.get(1) : tail.get(2);
       return eval(branch, env);
     }
