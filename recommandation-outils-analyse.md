@@ -14,7 +14,7 @@
 # Comparaison des outils d'analyse statique
 
 ## CheckStyle
-Développé originallement par Oliver Burn en 2001[9], CheckStyle est un outil d'analyse du code et permet d'exposer les écarts par rapport aux conventions établies[1]. Cet outil devient pertinent lorsque plusieurs personnes d'une équipe travaillent sur le code source. En effet, chacun peut avoir ses propres façons de faire qui sont possiblement différentes de celles de ces co-équipiers. C'est ainsi que cet outil devient particulièrement utile. Il sert à s'assurer que tous utilisent les mêmes conventions et les mêmes façons de faire. L'outil s'assure que le code soit bien formatté, bien standardisé, qu'il suit les bonnes pratiques et qu'il soit de qualité[3]. La version actuellement disponible est 8.31. Il peut être avantageusement incorporé à l'outil de build afin d'inclure systématiquement la détection des écarts du format du code source.
+Développé originalement par Oliver Burn en 2001 [9], CheckStyle est un outil d'analyse du code et permet d'exposer les écarts par rapport aux conventions établies[1]. Cet outil devient pertinent lorsque plusieurs personnes d'une même équipe travaillent sur le code source. En effet, chacun peut avoir ses propres façons de faire qui sont possiblement différentes de celles de ses co-équipiers. C'est ainsi que cet outil devient particulièrement utile. Il sert à s'assurer que tous utilisent les mêmes conventions et les mêmes façons de faire. L'outil s'assure que le code soit bien formatté, bien standardisé, qu'il suit les bonnes pratiques et qu'il soit de qualité[3]. La version actuellement disponible est 8.31. Il peut être avantageusement incorporé à l'outil de build afin d'inclure systématiquement la détection des écarts du format du code source.
 
 
 
@@ -32,14 +32,22 @@ Comme ces outils ne couvrent pas nécessairement les mêmes éléments et que ch
 
 De plus, comme ces outils peuvent être intégrés dans l'outil de build, ils sont automatiquement sollicités. Ils peuvent donc servir en outre d'un certain contrôle de la qualité. En effet, un changement dans le code qui provoque aussi un changement dans la détection des "irrégularités" indique potentiellement un problème dont il faut s'occuper ou à tout le moins en être conscient.
 
-Selon certains, l'analyse statique du code devrait occuper une place importante dans son développement. Il semblerait qu'en suivant son évolution et en réparant les problèmes de qualité on augmente du même coup la qualité de l'application à développer et la possibilité de livrer plus facilement celle-ci à temps [3].
+Selon certains, l'analyse statique du code devrait occuper une place importante dans l'environment de développement. Il semblerait qu'en suivant son évolution et en réparant les problèmes de qualité du code, on augmente du même coup la qualité de l'application à développer et la possibilité de livrer plus facilement celle-ci à temps [3].
 
-
+Basé sur tous ces éléments, il serait donc préférable d'utiliser les deux outils en parallèle. Cependant, il est plus facile pour l'oeil humain de détecter les conventions d'écriture. Ajoutons aussi que ce critère peut devenir très subjectif et que le fait d'obtenir une irrégularité dans la convention d'écriture ne provoque pas nécessairement une erreur dans le code. Cependant, si on regarde strictement d'un point de vue de la qualité du code, le meilleur outil serait donc PMD car il permet de faciliter la détection d'éléments plus subtils, potentiellement plus objectifs et ayant une implication plus grande que le simple formatage de celui-ci.
 
 
 
 #### Critère 2 : Points forts
+Tel que mentionné précédemment, un des points forts de CheckStyle et de PMD est d'obtenir une homogénéité, une standardisation et une certaine qualité du code et de ses conventions d'écriture. Ainsi, tous les membres d'une même équipe doivent s'assurer de coder de la même façon facilitant du même coup la compréhension et la lecture du code mais aussi de sa documentation. Sans être fiable à 100%, on diminue quand même les chances que du mauvais code ou du code non fonctionnel se retrouve en production, ce qui est un net avantage. Aussi, le fait que ces outils puissent être automatisés avec l'outil de build devient extrêmement intéressant. Nul besoin qu'un humain fasse le travail ardu et ennuyeux de faire ces détections. La personne étant en charge de la revue de code peut donc focusser sur ce qui ne peut pas être détecté par ces outils.
 
+De plus, chacun de ces outils ont l'avantage de pouvoir être personnalisés par de multiples règles afin d'éviter d'obtenir une avalanche d'avertissements non pertinents créant ainsi des faux positifs inutiles[3,6,7]. Ce critère devient important puisque si cette situation se produit, les programmeurs courent la chance de mal utiliser leur temps afin de démeler les vrais problèmes cachés à l'intérieur de fausses alertes réduisant ainsi l'efficacité de l'équipe. La confiance envers lesdits outils pourront s'en trouver affectée.
+
+Aussi, pour ajouter aux points forts, PMD utilise une fonctionnalité appelé "copy-paste detector" ou CPD qui permet de détecter si du code est réutilisé dans l'application[1]. En général, on veut éviter d'avoir du code redondant en appliquant le principe DRY (Don’t Repeat Yourself)[8] puisque cela peut être plus difficile à maintenir et peut être source de problèmes.
+
+Par ailleurs, les règles de PMD sont organisées selon huit catégories différentes: les meilleurs pratiques de codage, le style, le design, la documentation, les items fréquemment sujets aux erreur, le Multithreading, la performance et enfin la sécurité [8].
+
+En conclusion pour les points forts, la variété des éléments analysés et le fait de pouvoir personnaliser les règles sont des atouts importants et peuvent s'avérer essentiels. En ce sens, l'outil PMD semble bien adapté et semble aussi obtenir une couverture plus large.
 
 
 
@@ -47,6 +55,12 @@ Selon certains, l'analyse statique du code devrait occuper une place importante 
 
 
 
+
+
+
+{
+     With Checkstyle and PMD the rules are more general and style-related so they should only be used with custom configuration files to spare the team from an avalanche of irrelevant feedback
+}[6]
 
 
 
@@ -81,7 +95,6 @@ Selon certains, l'analyse statique du code devrait occuper une place importante 
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 # General considerations +++++++++++++++++++++++++++++++++++++++++++++++++:
 {
-     Besides catching pitfalls in code, java code analyzers can help keep coding consistent on a project. Running a code style analyzer on code can help ensure a team is formatting their code all the same way.
 
      FindBugs is another static code analyzer very similar to PMD.  The biggest difference between PMD and FindBugs is that FindBugs works on byte code, whereas PMD works on source code. FindBugs can find things like:
 
@@ -101,9 +114,7 @@ Selon certains, l'analyse statique du code devrait occuper une place importante 
 
 
 
-{
-     With Checkstyle and PMD the rules are more general and style-related so they should only be used with custom configuration files to spare the team from an avalanche of irrelevant feedback
-}[6]
+
 
 {
      a weakness of these tools is that they might provide a too extensive list of recommendations, most of which might be irrelevant (and noisy) for developers.
@@ -129,19 +140,9 @@ Selon certains, l'analyse statique du code devrait occuper une place importante 
      Here’s a small snippet of checkstyle being run on Apache Tomcat’s source.  Unfortunately, the project does not come with any XSLT renderers. However, output can be directed into an XML file and a custom renderer could be made.
 }[1]
 
-{
-     Conventions: scans source code and looks for coding standards
-}[2]
-
-{
-     License: LGPL Current version: 5.7 (released Feb 2014)
-
-     full suite that can spot class design errors, help you enforce a homogenous code style across the whole development team and compute code complexity metrics outlining where the functional bugs are likely to be found.
-
-     make sure that your source code is well-formatted and follows good standards and practices. The main purpose of the tool is to make sure that the code adheres to a coding standard.
 
 
-}[3]
+
 
 {
      There are basically only a few limits for Checkstyle:
@@ -174,7 +175,7 @@ Selon certains, l'analyse statique du code devrait occuper une place importante 
 
      – Enforce naming conventions
 
-     Additionally, PMD comes with a copy-paste detector to find blocks of copied and pasted code. Best of all, custom PMD rules are easily written with XPath and a GUI included with the software.
+     Additionally, PMD comes with a copy-paste detector to find blocks of copied and pasted code. Best of all, custom PMD rules are easily written with XPath and a GUI included with the software.[1]
 
      Out of the box, reports from PMD are transformed with XSLT into HTML reports. A custom XSLT transformation can be written to cater to specific needs.
 
@@ -195,11 +196,11 @@ Selon certains, l'analyse statique du code devrait occuper une place importante 
 
 
 {
-     When PMD is integrated into the build pipeline, it can act as a quality gate. For example, if rule violations are detected, the build can be failed or the commit can be rejected. This can be used to enforce a specific quality goal. The build pipeline could also be configured to only make sure, that no new rule violations are introduced, so that the code quality doesn’t degrade and hopefully  improves over time.
+     When PMD is integrated into the build pipeline, it can act as a quality gate. For example, if rule violations are detected, the build can be failed or the commit can be rejected. This can be used to enforce a specific quality goal. The build pipeline could also be configured to only make sure, that no new rule violations are introduced, so that the code quality doesn’t degrade and hopefully  improves over time.[8]
 
      There is one other component in PMD, that is often overseen: CPD – the CopyPaste-Detector. This is a separate component, that searches for code duplications in order to follow the DRY principle (Don’t Repeat Yourself).
 
-     PMD provides many different built-in rules. Since PMD 6, these rules are organised into 8 categories: Best Practices, Code Style, Design, Documentation, Error Prone, Multithreading, Performance, and Security.
+
 
 
 
