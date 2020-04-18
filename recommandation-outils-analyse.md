@@ -52,15 +52,15 @@ En conclusion pour les points forts, la variété des éléments analysés et le
 
 
 #### Critère 3: Points faibles
+Comme partout, il y a des avantages mais aussi des inconvénients. Les outils d'analyse statiques ne font pas exceptions à la règle. Comme mentionné précedemment, CheckStyle et PMD ont des règles personnalisables qui comptent parmi les avantages. Cependant, cette personnalisation devient essentielle car ces outils ont des règles générales par défaut qui donnent beaucoup d'avertissements non pertinents et peuvent potentiellement devenir un lourd fardeau [6,7]. Il importe donc d'investir une certaine quantité de temps pour que ces outils apportent un atout majeur plutôt qu'une contrainte ou une limite. Aussi, cette personnalisation peut différer d'un projet à l'autre et doit donc necessiter plus d'investissement de temps ou être vu comme une tâche à être incorporer dans le projet.
 
+De plus, si on voulait réduire le temps investi à configurer les règles qu'utilisent ces outils, on pourrait opter pour l'utilisation d'un seul outil. Cependant, comme chacun de ces outils couvrent des aspects plus spécifiques du code, l'utilisation de l'un ou de l'autre entraîne nécessairement des éléments non pris en charge de façon automatique. Il devient évident que ces outils doivent être incorporés pour une utilisation en parallèle afin de pallier à ces lacunes[1].
 
+Aussi, ces deux outils travaillent sur du code source. Il existe des outils comme FindBugs qui font l'analyse sur du byte code. Ceci amène certains avantages tels que la détection d'une mauvaise utilisation de ".equals()" et ".hashCode()", les conversions de types non sécuritaires, la détection de variables ou objets toujours null et les exceptions possiblement ignorés [1]. Il va sans dire que des options supplémentaires en terme de détection peuvent être un atout que malheureusement CheckStyle et PMD n'ont pas.
 
+À ces points faibles, ajoutons que CheckStyle ne prend en considération que du code Java écrit en ASCII seulement donc sans support UTF-8 et il n'est pas possible de voir le contenu d'autres fichiers puisque chacun est analysé individuellement [5].
 
-
-
-{
-     With Checkstyle and PMD the rules are more general and style-related so they should only be used with custom configuration files to spare the team from an avalanche of irrelevant feedback
-}[6]
+En conclusion, il semble que chacun des outils possèdent des points faibles que seuls une bonne configuration des règles d'analyses peuvent atténuer. Ajoutons aussi que leur utilisation en simultané apporte un bénéfice supérieur que lorsqu'utilisé individuellement. D'ailleurs, cetains outils tels que Sonarqube intègrent CheckStyle, PMD et FindBugs [6]. Il semble que ces outils soient équivalents en terme de points faibles.
 
 
 
@@ -83,128 +83,3 @@ En conclusion pour les points forts, la variété des éléments analysés et le
 8.  https://www.datarespons.com/code-quality-assurance-with-pmd/, Andreas Dangel.
 
 9.  https://en.wikipedia.org/wiki/Checkstyle
-
-
-
-
-
-
-
-
-
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-# General considerations +++++++++++++++++++++++++++++++++++++++++++++++++:
-{
-
-     FindBugs is another static code analyzer very similar to PMD.  The biggest difference between PMD and FindBugs is that FindBugs works on byte code, whereas PMD works on source code. FindBugs can find things like:
-
-     – Improper use of .equals() and .hashCode()
-     – Unsafe casts
-     – When something will always be null
-     – Possible StackOverflows
-     – Possible ignored exceptions
-
-     There is a lot of overlap between FindBugs and PMD. Because of the limitations of working with byte code or source code, each excels in their own area. They compliment each other, but are not the same thing.
-
-     The ideal static code analyzer would combine PMD, FindBugs and Checkstyle, so all aspects of coding practice could be covered.
-
-     Not only do they enforce project-wide coding standards, but they help prevent buggy code from reaching a critical environment.
-
-}[1]
-
-
-
-
-
-{
-     a weakness of these tools is that they might provide a too extensive list of recommendations, most of which might be irrelevant (and noisy) for developers.
-
-     In summary, if properly used, static analysis tools can provide a useful support during the development process. In other words, the removal of certain warnings before submitting a patch could help reducing the burden during the review process.
-
-     we used tools that do not require the code to compile. For this reason, tools such as FindBugs [13] that require the code to be compiled were not considered in this study.
-
-     Both CheckStyle and PMD are highly configurable tools that help users to enforce the adherence to coding standards by reporting violations to those standards.
-
-
-}[7]
-
-
-
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-# CheckStyle +++++++++++++++++++++++++++++++++++++++++++++++++:
-{
-      It’s not going to stop any rouge exceptions, but it will give feedback on how the code is put together. Checkstyle is useful to ensure java code is being written right. Here are some things Checkstyle will catch:
-
-     Checkstyle is most-different from PMD and FindBugs. While it has checks for things like empty catch blocks and .equals() vs ‘==’, the main focus on the project is ensuring the coding style adheres to a set of conventions.
-
-     Here’s a small snippet of checkstyle being run on Apache Tomcat’s source.  Unfortunately, the project does not come with any XSLT renderers. However, output can be directed into an XML file and a custom renderer could be made.
-}[1]
-
-
-
-
-
-{
-     There are basically only a few limits for Checkstyle:
-
-     Java code should be written with ASCII characters only, no UTF-8 support.
-     To get valid violations, code have to be compilable, in other case you can get not easy to understand parse errors.
-     You cannot determine the type of an expression. Example: "getValue() + getValue2()"
-     You cannot determine the full inheritance hierarchy of type.
-     You cannot see the content of other files. You have content of one file only during all Checks execution. All files are processed one by one.
-     This means that you cannot implement some of the code inspection features that are available in advanced IDEs like Eclipse, IntelliJ IDEA, SpotBugs, Sonarqube.
-
-
-}[5]
-
-
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-# PMD +++++++++++++++++++++++++++++++++++++++++++++++++:
-{
-     PMD is an extremely useful tool in analyzing source code. According to the project website, it ‘scans source code and looks for potential problems, possible bugs, unused and suboptimal code, over-complicated expressions and duplicate code’. PMD comes with a huge set of rules that can analyze many different things in java code. To name a few:
-
-     – Empty try/catch blocks
-
-     – Over-complicated expressions
-
-     – Using .equals() instead of ‘==’
-
-     – Unused variables and imports
-
-     – Unnecessary loops and if statements
-
-     – Enforce naming conventions
-
-     Additionally, PMD comes with a copy-paste detector to find blocks of copied and pasted code. Best of all, custom PMD rules are easily written with XPath and a GUI included with the software.[1]
-
-     Out of the box, reports from PMD are transformed with XSLT into HTML reports. A custom XSLT transformation can be written to cater to specific needs.
-
-}[1]
-
-
-
-{
-
-
-     PMD is a source code analyzer that finds common flaws like unused objects, empty blocks, unnecessary catches, incomprehensible namings and so forth. It uses “rulesets” allow you to check your code for almost every wrong language use pattern you can come up with, and copy-paste detection to make it easier for you to follow the best practices of code reuse.
-
-     PMD is a very customizable tool, so the performance and installation outcome really depends on how one has instructed the tool to find problems. PMD has its own built-in rulesets, but it suggests to have your own rulesets relevant to the project, developers and frameworks. Having a framework-related ruleset is actually a good thing, because it helps you find problems that other tools cannot, like framework-specific configuration threats and issues. PMD is like a team-specific automatic code review tool in a sense, as it helps spot problems that a team thinks are important for their project.
-
-     One of the first things we notice about PMD is that it’s somewhat spammy. Source code has a much richer structure, than, for example, a compiled bytecode archive. This means that the rate of false positives when finding code inefficiencies is higher. The solution is to carefully examine rulesets that PMD employes when you run it and limit its output to the most severe cases.
-}[3]
-
-
-
-{
-     When PMD is integrated into the build pipeline, it can act as a quality gate. For example, if rule violations are detected, the build can be failed or the commit can be rejected. This can be used to enforce a specific quality goal. The build pipeline could also be configured to only make sure, that no new rule violations are introduced, so that the code quality doesn’t degrade and hopefully  improves over time.[8]
-
-     There is one other component in PMD, that is often overseen: CPD – the CopyPaste-Detector. This is a separate component, that searches for code duplications in order to follow the DRY principle (Don’t Repeat Yourself).
-
-
-
-
-
-     GitHub is now the primary location for the source code and the issue tracker.
-
-
-}[8]
