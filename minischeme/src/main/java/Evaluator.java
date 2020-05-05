@@ -34,6 +34,24 @@ public class Evaluator {
     else if (head.equals("lambda")) {
       return new Lambda((List<String>) tail.get(0), (List<Object>) tail.get(1), this, env);
     }
+    else if (head.equals("and")) {
+      return eval(tail.get(1) && tail.get(2) , env);
+    }
+    else if (head.equals("not")) {
+      return eval(!tail.get(1), env);
+    }
+    else if (head.equals("eq")){
+      return eval(tail.get(1) == tail.get(2), env);
+    }
+    else if (head.equals("head")) {
+      return eval(tail.get(0), env);
+    }
+    else if (head.equals("tail")) {
+      return eval();
+    }
+    else if (head.equals("count")) {
+      return eval();
+    }
     else {
       final var proc = (Procedure) eval(head, env);
       if (tail.size() == 0) {
