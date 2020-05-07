@@ -35,22 +35,22 @@ public class Evaluator {
       return new Lambda((List<String>) tail.get(0), (List<Object>) tail.get(1), this, env);
     }
     else if (head.equals("and")) {
-      return eval(tail.get(1) && tail.get(2) , env);
+      return eval( (boolean) eval(tail.get(0), env) && (boolean) eval(tail.get(1), env) , env);
     }
     else if (head.equals("not")) {
-      return eval(!tail.get(1), env);
+      return eval( (! (boolean) eval(tail.get(0), env)), env);
     }
     else if (head.equals("eq")){
-      return eval(tail.get(1) == tail.get(2), env);
+      return eval( (boolean) eval(tail.get(0), env) == (boolean) eval(tail.get(1), env), env);
     }
     else if (head.equals("head")) {
-      return eval(tail.get(0), env);
+      return eval(head, env);
     }
     else if (head.equals("tail")) {
-      return eval();
+      return eval(tail, env);
     }
     else if (head.equals("count")) {
-      return eval();
+      return eval(tail.size(), env);
     }
     else {
       final var proc = (Procedure) eval(head, env);
