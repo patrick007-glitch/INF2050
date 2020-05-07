@@ -44,13 +44,13 @@ public class Evaluator {
       return eval( (boolean) eval(tail.get(0), env) == (boolean) eval(tail.get(1), env), env);
     }
     else if (head.equals("head")) {
-      return eval(head, env);
+      return ( (List<Object>) tail.get(0) ).get(0);
     }
     else if (head.equals("tail")) {
-      return eval(tail, env);
+      return tail.get(0);
     }
     else if (head.equals("count")) {
-      return eval(tail.size(), env);
+      return ( (List<Object>) tail.get(0) ).size();
     }
     else {
       final var proc = (Procedure) eval(head, env);
