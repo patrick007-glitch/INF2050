@@ -35,13 +35,23 @@ public class Evaluator {
       return new Lambda((List<String>) tail.get(0), (List<Object>) tail.get(1), this, env);
     }
     else if (head.equals("and")) {
-      return eval( (boolean) eval(tail.get(0), env) && (boolean) eval(tail.get(1), env) , env);
+      for (var element : tail) {
+        if(! (boolean) eval(element, env)){
+          return false;
+        }
+      }
+      return true;
     }
     else if (head.equals("not")) {
       return eval( (! (boolean) eval(tail.get(0), env)), env);
     }
     else if (head.equals("eq")){
-      return eval( (boolean) eval(tail.get(0), env) == (boolean) eval(tail.get(1), env), env);
+      for(int i = 1; i < tail.size(); i++) {
+        if( (boolean) eval(tail.get(0), env) != (boolean) eval(tail.get(i), env)) {
+          return false;
+        }
+      }
+      return true;
     }
     else if (head.equals("head")) {
       return ( (List<Object>) tail.get(0) ).get(0);

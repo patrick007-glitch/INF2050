@@ -131,7 +131,7 @@ class EvaluatorTests {
   }
 
   @Test void andTest() {
-    List<Object> program = List.of("and", true, false);
+    List<Object> program = List.of("and", true, false, true, true, true);
     Object result = evaluator.eval(program, env);
     assertEquals(false, result);
   }
@@ -143,7 +143,7 @@ class EvaluatorTests {
   }
 
   @Test void eqTest() {
-    List<Object> program = List.of("eq", true, false);
+    List<Object> program = List.of("eq", true, false, false, false, false);
     Object result = evaluator.eval(program, env);
     assertEquals(false, result);
   }
