@@ -1,5 +1,6 @@
 plugins {
     id 'application'
+    id 'checkstyle'
 }
 
 version = '1.0.0'
@@ -19,6 +20,7 @@ dependencies {
 
 test {
   useJUnitPlatform()
+  println(file("${rootDir}/path/to/checkstyle.xml"))
 }
 
 dependencies {
@@ -41,4 +43,8 @@ jar {
     manifest {
         attributes "Main-Class": "minischeme.Application"
     }
+  }
+
+  checkstyle {
+    toolVersion = '8.32'
   }

@@ -1,0 +1,26 @@
+["begin",
+
+     ["define", "p", true],
+     ["define", "q", false],
+
+     ["define", "NAND", ["lambda",["", "q"],
+          ["NOT", ["AND", "p", "q"]]]],
+
+
+     ["define", "NOR", ["lambda",["p", "q"],
+          ["AND", [["NOT", "p"], ["NOT", "q"]]]]],
+
+
+     ["define", "OR", ["lambda",["p", "q"],
+          ["NOT", ["NOR", "p", "q"]]]],
+
+
+     ["define", "XOR", ["lambda",["p", "q"],
+          ["OR", [["AND", [["NOT", "p"], "q"]], ["AND", ["p", ["NOT", "q"]]]]]
+     ]],
+
+     ["NAND", "p", "q"],
+     ["NOR", "p", "q"],
+     ["OR", "p", "q"],
+     ["XOR", "p", "q"]
+]
