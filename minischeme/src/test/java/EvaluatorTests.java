@@ -130,4 +130,42 @@ class EvaluatorTests {
     assertEquals(120.0, result);
   }
 
+  @Test void andTest() {
+    List<Object> program = List.of("and", true, false, true, true, true);
+    Object result = evaluator.eval(program, env);
+    assertEquals(false, result);
+  }
+
+  @Test void notTest() {
+    List<Object> program = List.of("not", true);
+    Object result = evaluator.eval(program, env);
+    assertEquals(false, result);
+  }
+
+  @Test void eqTest() {
+    List<Object> program = List.of("eq", true, false, false, false, false);
+    Object result = evaluator.eval(program, env);
+    assertEquals(false, result);
+  }
+
+  @Test void countTest() {
+    List<Object> program = List.of("count", List.of("head", "tail1", "tail2"));
+    Object result = evaluator.eval(program, env);
+    assertEquals(3, result);
+  }
+
+  @Test void tailTest() {
+    List<Object> program = List.of("tail", List.of(true, false));
+    Object result = evaluator.eval(program, env);
+    assertEquals(List.of(true, false), result);
+  }
+
+  @Test void headTest() {
+    List<Object> program = List.of("head", List.of("head", "tail1", "tail2"));
+    Object result = evaluator.eval(program, env);
+    assertEquals("head", result);
+
+  }
+
+
 }
