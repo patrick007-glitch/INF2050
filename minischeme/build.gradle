@@ -24,7 +24,6 @@ dependencies {
 
 test {
   useJUnitPlatform()
-  println(file("${rootDir}/path/to/checkstyle.xml"))
 }
 
 dependencies {
