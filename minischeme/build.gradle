@@ -1,17 +1,10 @@
 plugins {
     id 'java'
-<<<<<<< HEAD
     id 'antlr'
     id 'maven-publish'
     id 'application'
     id 'checkstyle'
     id "org.sonarqube" version "2.8"
-=======
-    id 'application'
-    id 'checkstyle'
-    id "org.sonarqube" version "2.8"
-
->>>>>>> 0c2175f774a49ad9069895ddd9c81bdc68488630
 }
 
 sourceCompatibility = '1.11'
@@ -32,8 +25,8 @@ repositories {
 test {
   useJUnitPlatform()
 }
+
 dependencies {
-<<<<<<< HEAD
     antlr 'org.antlr:antlr4:4.7'
 
     compile 'commons-lang:commons-lang:2.0'
@@ -51,17 +44,6 @@ task junitConsole(type: JavaExec) {
     classpath sourceSets.test.runtimeClasspath
     main 'org.junit.platform.console.ConsoleLauncher'
     args '--scan-classpath'
-=======
-  compile 'commons-lang:commons-lang:2.0'
-  compile 'com.fasterxml.jackson.core:jackson-core:2.9.1'
-  compile group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.9.1'
-  compile 'com.fasterxml.jackson.core:jackson-annotations:2.9.1'
-  spotbugsPlugins 'com.h3xstream.findsecbugs:findsecbugs-plugin:1.7.1'
-}
-
-test {
-  useJUnitPlatform()
->>>>>>> 0c2175f774a49ad9069895ddd9c81bdc68488630
 }
 
 publishing {
@@ -97,21 +79,10 @@ jar {
   checkstyle {
     toolVersion = '8.32'
   }
-<<<<<<< HEAD
-  
+
   sonarqube {
      properties {
          property "sonar.sourceEncoding", "UTF-8"
           property "sonar.exclusions", "**/*Generated.java"
      }
  }
-=======
-
-  sonarqube {
-      properties {
-          property "sonar.sourceEncoding", "UTF-8"
-           property "sonar.exclusions", "**/*Generated.java"
-      }
-  }
-
->>>>>>> 0c2175f774a49ad9069895ddd9c81bdc68488630
