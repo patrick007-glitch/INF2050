@@ -1,31 +1,60 @@
 plugins {
+    id 'java'
+    id 'antlr'
+    id 'maven-publish'
     id 'application'
     id 'checkstyle'
+    id "org.sonarqube" version "2.8"
 }
+
+sourceCompatibility = '1.11'
+targetCompatibility = '1.11'
 
 version = '1.0.0'
 
 mainClassName = 'minischeme.Application'
 
+generateGrammarSource {
+  arguments += ['-visitor', '-no-listener']
+}
+
 repositories {
   mavenCentral()
 }
 
-dependencies {
-  compile 'commons-lang:commons-lang:2.0'
-  compile 'com.fasterxml.jackson.core:jackson-core:2.9.1'
-  compile group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.9.1'
-  compile 'com.fasterxml.jackson.core:jackson-annotations:2.9.1'
-}
-
 test {
   useJUnitPlatform()
-  println(file("${rootDir}/path/to/checkstyle.xml"))
+}
+dependencies {
+    antlr 'org.antlr:antlr4:4.7'
+
+    compile 'commons-lang:commons-lang:2.0'
+    compile 'com.fasterxml.jackson.core:jackson-core:2.9.1'
+    compile group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.9.1'
+    compile 'com.fasterxml.jackson.core:jackson-annotations:2.9.1'
+    testImplementation('org.junit.jupiter:junit-jupiter-api:5.3.1')
+    testImplementation('org.junit.jupiter:junit-jupiter-params:5.3.1')
+    testRuntimeOnly('org.junit.jupiter:junit-jupiter-engine:5.3.1')
+    testRuntimeOnly('org.junit.platform:junit-platform-console:1.3.2')
 }
 
-dependencies {
-    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.3.1'
-    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.3.1'
+task junitConsole(type: JavaExec) {
+    dependsOn testClasses
+    classpath sourceSets.test.runtimeClasspath
+    main 'org.junit.platform.console.ConsoleLauncher'
+    args '--scan-classpath'
+}
+
+publishing {
+  publications {
+    maven(MavenPublication) {
+      groupId = 'ca.uqam.inf2050.minischeme'
+      artifactId = 'parser'
+      version = '1.1'
+
+      from components.java
+    }
+  }
 }
 
 task uberJar(type: Jar) {
@@ -48,3 +77,10 @@ jar {
   checkstyle {
     toolVersion = '8.32'
   }
+  
+  sonarqube {
+     properties {
+         property "sonar.sourceEncoding", "UTF-8"
+          property "sonar.exclusions", "**/*Generated.java"
+     }
+ }
