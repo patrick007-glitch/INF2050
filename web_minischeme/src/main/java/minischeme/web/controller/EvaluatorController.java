@@ -16,6 +16,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import java.util.*;
+
 @Controller
 @RequestMapping("/")
 @lombok.extern.slf4j.Slf4j
@@ -48,8 +50,17 @@ public class EvaluatorController {
       final var source = command.getSource();
       log.info("CODE SOURCE RECU: <{}>", source);
 
-      final var result = "À FAIRE 🤔";
-      command.setResult(result);
+      minischeme.Evaluator evaluator = new minischeme.Evaluator();
+      var env =  minischeme.GlobalEnvironment.build();
+      var parser = new minischeme.parser.api.Parser();
+      var parsed = (List<Object>) parser.parseString(source);
+
+
+      var code =  evaluator.eval(parsed, env);
+
+      //String code = "RIP XD";
+      final var result = code;
+      command.setResult((String) result);
 
       redirectAttributes
         .addFlashAttribute("flash_success", "run_evaluation_flash_success_message")
@@ -73,7 +84,7 @@ class RunCommand implements Serializable {
   @NotBlank
   @NotNull
   private String source = "";
-  
+
   @NotNull
   private String result = "";
 }
