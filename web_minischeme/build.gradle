@@ -20,7 +20,7 @@ targetCompatibility = '1.11'
 
 dependencies {
   // Dependance du module de l'application minischeme.
-  compile files('minischeme/build/libs/minischeme-1.0.0.jar')
+  compile files('../minischeme/build/libs/minischeme-1.0.0.jar')
   compile fileTree('libs') { include '*.jar' }
   // web development
   compile("org.springframework.boot:spring-boot-starter-web")
