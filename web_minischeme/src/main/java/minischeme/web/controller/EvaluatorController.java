@@ -52,16 +52,16 @@ public class EvaluatorController {
       log.info("CODE SOURCE RECU: <{}>", source);
 
       minischeme.Evaluator evaluator = new minischeme.Evaluator();
-      var env =  minischeme.GlobalEnvironment.build();
-      var parser = new minischeme.parser.api.Parser();
+      var env = minischeme.GlobalEnvironment.build();
+      var Parser = new minischeme.parser.api.Parser();
 
-      var parsed = (List<Object>) parser.parseString(source);
+      List<Object> parsed = (List<Object>) Parser.parseString(source);
 
-      var code =  evaluator.eval(parsed, env);
 
-      //String code = "RIP XD";
-      final var result = code;
-      command.setResult((String) result);
+      var code = evaluator.eval(parsed, env);
+
+      final var result = code.toString() ;
+      command.setResult(result);
 
       redirectAttributes
         .addFlashAttribute("flash_success", "run_evaluation_flash_success_message")
