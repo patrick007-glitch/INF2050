@@ -23,7 +23,7 @@ targetCompatibility = '1.11'
 dependencies {
   // Dependance du module de l'application minischeme.
   compile files('../minischeme/build/libs/minischeme-1.0.0.jar')
-  compile fileTree('libs') { include '*.jar' }
+  compile fileTree('../minischeme/build/libs') { include '*.jar' }
   // web development
   compile("org.springframework.boot:spring-boot-starter-web")
   compile("org.springframework.boot:spring-boot-starter-thymeleaf")
@@ -35,6 +35,10 @@ dependencies {
 
   // development tools
   compile("org.springframework.boot:spring-boot-devtools")
-
+  // Antlr dependency
   antlr 'org.antlr:antlr4:4.7'
+}
+
+task myJavadocs(type: Javadoc) {
+  source = sourceSets.main.allJava
 }

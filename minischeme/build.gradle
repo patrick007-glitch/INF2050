@@ -86,3 +86,7 @@ jar {
           property "sonar.exclusions", "**/*Generated.java"
      }
  }
+ 
+ task myJavadocs(type: Javadoc) {
+   source = sourceSets.main.allJava
+ }
