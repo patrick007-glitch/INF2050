@@ -1,0 +1,41 @@
+Started by timer
+Running as SYSTEM
+[EnvInject] - Loading node environment variables.
+Building in workspace /Users/stevegordon/.jenkins/workspace/TP-INF2050
+No credentials specified
+ > /usr/bin/git rev-parse --is-inside-work-tree # timeout=10
+Fetching changes from the remote Git repository
+ > /usr/bin/git config remote.origin.url git@github.com:patrick007-glitch/INF2050.git # timeout=10
+Fetching upstream changes from git@github.com:patrick007-glitch/INF2050.git
+ > /usr/bin/git --version # timeout=10
+ > /usr/bin/git fetch --tags --force --progress -- git@github.com:patrick007-glitch/INF2050.git +refs/heads/*:refs/remotes/origin/* # timeout=10
+ > /usr/bin/git rev-parse refs/remotes/origin/master^{commit} # timeout=10
+ > /usr/bin/git rev-parse refs/remotes/origin/origin/master^{commit} # timeout=10
+Checking out Revision 0c2175f774a49ad9069895ddd9c81bdc68488630 (refs/remotes/origin/master)
+ > /usr/bin/git config core.sparsecheckout # timeout=10
+ > /usr/bin/git checkout -f 0c2175f774a49ad9069895ddd9c81bdc68488630 # timeout=10
+Commit message: "Update build.gradle"
+ > /usr/bin/git rev-list --no-walk 0c2175f774a49ad9069895ddd9c81bdc68488630 # timeout=10
+[Gradle] - Launching build.
+[TP-INF2050] $ /usr/local/Cellar/gradle/6.3/bin/gradle build
+Starting a Gradle Daemon (subsequent builds will be faster)
+
+[8mha:////4Pg+aLavLx+IWGWeceWq+U76aGDW4hHNLOEiXOvzNqC9AAAAYB+LCAAAAAAAAP9b85aBtbiIQSWjNKU4P0+vIKc0PTOvWC+9KDElJ1XPHUyFJBZn++WXpCqzh62PfDo/h4mBoaKIQQqqJTk/rzgfqNYZQoMUMkAAI0hhAQASWqbMYgAAAA==[0m> Task :buildEnvironment
+
+------------------------------------------------------------
+Root project
+------------------------------------------------------------
+
+classpath
+No dependencies
+
+A web-based, searchable dependency report is available by adding the --scan option.
+
+Deprecated Gradle features were used in this build, making it incompatible with Gradle 7.0.
+Use '--warning-mode all' to show the individual deprecation warnings.
+See https://docs.gradle.org/6.3/userguide/command_line_interface.html#sec:command_line_warnings
+
+[8mha:////4E+dF2G2D3lI/7jmPX+83EMFW0kNBkX+l5lS4bsFbQ2hAAAAYx+LCAAAAAAAAP9b85aBtbiIQT2jNKU4P0+vIKc0PTOvWC+9KDElJ1XPHUz5l5Yk5+em+uWXpNbNmqZ4mHPZIiYGhooiBimoruT8vOJ8oHJnCA1SyAABjCCFBQBI197DZQAAAA==[0mBUILD SUCCESSFUL in 6s
+1 actionable task: 1 executed
+Build step 'Invoke Gradle script' changed build result to SUCCESS
+Finished: SUCCESS

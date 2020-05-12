@@ -1,0 +1,37 @@
+commit e647cf8a5500b3e069ce66260dd8583b7344888e
+tree c567e59f8a242455926e880c22716bf485669c0b
+parent 8f019f9e46bafaca7a0f7d8e6917d517502a3c8a
+author patrick007-glitch <55208056+patrick007-glitch@users.noreply.github.com> 2020-05-09 16:58:06 -0400
+committer patrick007-glitch <55208056+patrick007-glitch@users.noreply.github.com> 2020-05-09 16:58:06 -0400
+
+    Ajout du module de lapplication web. Reste a inclure la dependance du module de l'application minischeme.
+
+
+:000000 100644 0000000000000000000000000000000000000000 b71e4c30e5846ac88be9503db6d0296b720ff749 A	minischeme/LICENSE
+:000000 100644 0000000000000000000000000000000000000000 a161a8a279ae61525ac8149416a326b9f1bf1fb8 A	web_minischeme/.gitignore
+:000000 100644 0000000000000000000000000000000000000000 b71e4c30e5846ac88be9503db6d0296b720ff749 A	web_minischeme/LICENSE
+:000000 100644 0000000000000000000000000000000000000000 0626d27a3e1d05e022162a88b1df6b89eb12af93 A	web_minischeme/build.gradle
+:000000 100644 0000000000000000000000000000000000000000 87b738cbd051603d91cc39de6cb000dd98fe6b02 A	web_minischeme/gradle/wrapper/gradle-wrapper.jar
+:000000 100644 0000000000000000000000000000000000000000 6b3851a8ad2c97bc9a8c9e232349a37d96eb5f43 A	web_minischeme/gradle/wrapper/gradle-wrapper.properties
+:000000 100644 0000000000000000000000000000000000000000 af6708ff229fda75da4f7cc4da4747217bac4d53 A	web_minischeme/gradlew
+:000000 100644 0000000000000000000000000000000000000000 6d57edc706c93465988754383a2d7ff353d4e79f A	web_minischeme/gradlew.bat
+:000000 100644 0000000000000000000000000000000000000000 a0f71b0c5b31bae48bc6def4d1658862f29ec253 A	web_minischeme/settings.gradle
+:000000 100644 0000000000000000000000000000000000000000 e62fbd9d82172a99bb1e26ae8f4739638bc28484 A	web_minischeme/src/main/java/minischeme/web/Application.java
+:000000 100644 0000000000000000000000000000000000000000 a84e412866b388883c562e351f38c9efb6e1368d A	web_minischeme/src/main/java/minischeme/web/controller/EvaluatorController.java
+:000000 100644 0000000000000000000000000000000000000000 d5a6d27a96799eb3821b21ab1f91695aa788e5ba A	web_minischeme/src/main/java/minischeme/web/controller/ExamplesController.java
+:000000 100644 0000000000000000000000000000000000000000 aaae9dd17e618539b95a40c583fbcb0e9bb0f5f9 A	web_minischeme/src/main/resources/messages.properties
+:000000 100644 0000000000000000000000000000000000000000 4d956a64c4f88d911ee6f0f247498ef395f4ca4f A	web_minischeme/src/main/resources/static/public/examples/addition.minischeme
+:000000 100644 0000000000000000000000000000000000000000 b781a8234aa5f866e688b64014695ce7b2e9eae1 A	web_minischeme/src/main/resources/static/public/examples/aire-cercle.minischeme
+:000000 100644 0000000000000000000000000000000000000000 6e788c524aa18f1b95c8dd54ca5a0b0aabc17285 A	web_minischeme/src/main/resources/static/public/examples/compose.minischeme
+:000000 100644 0000000000000000000000000000000000000000 a3cb0afdedcd7c46ad28004492461ab3c3151606 A	web_minischeme/src/main/resources/static/public/examples/not-liste.minischeme
+:000000 100644 0000000000000000000000000000000000000000 7a8b8133009effee3493207caf77a5e6b3ef2aea A	web_minischeme/src/main/resources/static/public/examples/somme-liste.minischeme
+:000000 100644 0000000000000000000000000000000000000000 271e8f0712ee6a1f93a0d8f5a93ff139fe2ec5c2 A	web_minischeme/src/main/resources/static/public/vendor/semantic/semantic.min.css
+:000000 100644 0000000000000000000000000000000000000000 af48ccc05de15387b34db4bc130c32bd8f9809e2 A	web_minischeme/src/main/resources/static/public/vendor/semantic/semantic.min.js
+:000000 100644 0000000000000000000000000000000000000000 769e6fabef464631c52fffb35dcf41d2d1da6c18 A	web_minischeme/src/main/resources/static/public/vendor/semantic/themes/default/assets/fonts/icons.eot
+:000000 100644 0000000000000000000000000000000000000000 f7936cc1e789eea5438d576d6b12de20191da09d A	web_minischeme/src/main/resources/static/public/vendor/semantic/themes/default/assets/fonts/icons.otf
+:000000 100644 0000000000000000000000000000000000000000 b0eb9a39c8108004dfe895186fab182a5d723ef4 A	web_minischeme/src/main/resources/static/public/vendor/semantic/themes/default/assets/fonts/icons.svg
+:000000 100644 0000000000000000000000000000000000000000 dc18b3781fcd12a478fd2e8b9fc3c5c010621d31 A	web_minischeme/src/main/resources/static/public/vendor/semantic/themes/default/assets/fonts/icons.ttf
+:000000 100644 0000000000000000000000000000000000000000 76b54da2a7055808cc776fa16a353b1664587d76 A	web_minischeme/src/main/resources/static/public/vendor/semantic/themes/default/assets/fonts/icons.woff
+:000000 100644 0000000000000000000000000000000000000000 32b980833a0fc217628c69ad7a8db409155c0a1c A	web_minischeme/src/main/resources/static/public/vendor/semantic/themes/default/assets/fonts/icons.woff2
+:000000 100644 0000000000000000000000000000000000000000 cdd33c3bc609a91ff492fa352d835bc65de6eb9c A	web_minischeme/src/main/resources/static/public/vendor/semantic/themes/default/assets/images/flags.png
+:000000 100644 0000000000000000000000000000000000000000 4368c3303edd43d350258ca42d147c942ad61b56 A	web_minischeme/src/main/resources/templates/show.html

@@ -1,0 +1,29 @@
+commit 8f019f9e46bafaca7a0f7d8e6917d517502a3c8a
+tree 6a830c9b476e473c66bb2cc273afd07eb751b881
+parent 223d344635cb813b28224eb045d885f15f2b89a6
+author patrick007-glitch <55208056+patrick007-glitch@users.noreply.github.com> 2020-05-09 16:16:34 -0400
+committer patrick007-glitch <55208056+patrick007-glitch@users.noreply.github.com> 2020-05-09 16:16:34 -0400
+
+    Changement au build et ajout du nouveau compilateur parser.
+
+
+:100644 100644 19b586853cefbf4531c83ab8e3fedff92951bdc4 dbaa65f228ede60189415d63405a25fe0113d44b M	minischeme/build.gradle
+commit ec0e94b96e0bf6e763792cc0eb91c58cf9ee9574
+tree 7012b3816a7b61bc7c39da2ba81968772974ca95
+parent f4a8eb6dc641c0df8f45312c4b55043ca53b0e12
+author patrick007-glitch <55208056+patrick007-glitch@users.noreply.github.com> 2020-05-09 16:07:39 -0400
+committer patrick007-glitch <55208056+patrick007-glitch@users.noreply.github.com> 2020-05-09 16:07:39 -0400
+
+    Ajout du nouveau compilateur paser.
+
+
+:100644 100644 c280b9fab151ce72e7e98ce7d3854987d65d6ff6 8ff389d73118bca37a961d0b5e8c953c84e41377 M	minischeme/build.gradle
+:000000 100644 0000000000000000000000000000000000000000 41576d544b39659e41b9e4f648723e7351d011e3 A	minischeme/src/main/antlr/minischeme/parser/Minischeme.g4
+:100644 100644 64d931766a0cacf33f7fc5c0315289b6d22fa578 64d931766a0cacf33f7fc5c0315289b6d22fa578 R100	minischeme/src/main/java/Application.java	minischeme/src/main/java/minischeme/Application.java
+:100644 100644 1d6337573a10aa6cbe8498c32262107cec7c1844 1d6337573a10aa6cbe8498c32262107cec7c1844 R100	minischeme/src/main/java/Evaluator.java	minischeme/src/main/java/minischeme/Evaluator.java
+:100644 100644 c4155a08673a9bba8ac78b5a2911053d6c552781 c4155a08673a9bba8ac78b5a2911053d6c552781 R100	minischeme/src/main/java/GlobalEnvironment.java	minischeme/src/main/java/minischeme/GlobalEnvironment.java
+:100644 100644 d02390db71c8a838021f42995d5fdfeb9ebca84e d02390db71c8a838021f42995d5fdfeb9ebca84e R100	minischeme/src/main/java/Lambda.java	minischeme/src/main/java/minischeme/Lambda.java
+:100644 100644 1cd417d4d23cd19cd25fd57115ffe3609a9ed1ba 1cd417d4d23cd19cd25fd57115ffe3609a9ed1ba R100	minischeme/src/main/java/Procedure.java	minischeme/src/main/java/minischeme/Procedure.java
+:000000 100644 0000000000000000000000000000000000000000 9abd4dfd81402d4267c73c7ebb8ef97d604cb57e A	minischeme/src/main/java/minischeme/parser/MinischemeDefaultVisitor.java
+:000000 100644 0000000000000000000000000000000000000000 e2cc8c6541285160e48bf1cacb50e37f6f26f75b A	minischeme/src/main/java/minischeme/parser/api/Parser.java
+:000000 100644 0000000000000000000000000000000000000000 45624a198eeb81d50b88235d9001e6088fbfd19a A	minischeme/src/test/java/minischeme/parser/MinischemeParserTests.java
