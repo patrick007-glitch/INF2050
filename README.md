@@ -7,7 +7,7 @@ Membre d'équipe :
 - Steve Gordon,
 
 Ce projet est un projet dans le cadre d'un cours universitaire (INF2050). C'est
-un interpreteur pour le language minischeme qui un dérivé de scheme créer dans
+un interpreteur pour le language minischeme qui est un dérivé de scheme créer dans
 le cadre du cours par le professeur François-Xavier Guillemette.
 
 Le projet est diviser en deux modules soit l'interpreteur sous le dossier minischeme
