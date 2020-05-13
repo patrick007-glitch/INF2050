@@ -1,0 +1,10 @@
+commit 97423dccd97696fd9bbe13916ed050fc6d470cb0
+tree 142650dd8367d6e6cedf120699646536dcf01be5
+parent e647cf8a5500b3e069ce66260dd8583b7344888e
+author patrick007-glitch <55208056+patrick007-glitch@users.noreply.github.com> 2020-05-09 17:58:47 -0400
+committer patrick007-glitch <55208056+patrick007-glitch@users.noreply.github.com> 2020-05-09 17:58:47 -0400
+
+    Changement au gradle build de lapplication web.
+
+
+:100644 100644 0626d27a3e1d05e022162a88b1df6b89eb12af93 a3b8522ac90da9817ad654f259bd994f94014f6c M	web_minischeme/build.gradle
